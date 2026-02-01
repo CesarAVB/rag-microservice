@@ -1,0 +1,1 @@
+Sempre gere mensagens de commit seguindo o padrão Conventional Commits (ex: feat:, fix:, chore:, docs:). Use letras minúsculas e seja conciso.
