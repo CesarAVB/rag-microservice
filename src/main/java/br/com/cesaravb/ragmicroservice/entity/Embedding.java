@@ -1,7 +1,6 @@
 package br.com.cesaravb.ragmicroservice.entity;
 
 import java.time.LocalDateTime;
-import java.util.Vector;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,7 +36,7 @@ public class Embedding {
     private Chunk chunk;
 
     @Column(columnDefinition = "vector(1536)")
-    private Vector vetor;
+    private float[] vetor;
 
     @Column(name = "modelo_embedding", length = 100)
     private String modeloEmbedding;
