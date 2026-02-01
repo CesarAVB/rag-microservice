@@ -1,1 +1,1 @@
-Sempre gere mensagens de commit seguindo o padrão Conventional Commits (ex: feat:, fix:, chore:, docs:). Use letras minúsculas e seja conciso.
+Sempre gere mensagens de commit seguindo o padrão Conventional Commits (ex: feat:, fix:, chore:, docs:). Use letras minúsculas, sempre em português do Brasil e seja conciso.
