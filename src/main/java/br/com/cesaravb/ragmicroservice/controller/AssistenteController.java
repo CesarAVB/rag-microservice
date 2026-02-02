@@ -33,8 +33,7 @@ public class AssistenteController {
     // # criarAssistente - POST /api/assistentes
     // ==================================
     @PostMapping
-    public ResponseEntity<AssistenteResponse> criarAssistente(
-            @Valid @RequestBody CriarAssistenteRequest request) {
+    public ResponseEntity<AssistenteResponse> criarAssistente(@Valid @RequestBody CriarAssistenteRequest request) {
         log.info("Criando novo assistente: {}", request.nome());
         AssistenteResponse response = service.criar(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
@@ -64,9 +63,7 @@ public class AssistenteController {
     // # atualizarAssistente - PUT /api/assistentes/{id}
     // ==================================
     @PutMapping("/{id}")
-    public ResponseEntity<AssistenteResponse> atualizarAssistente(
-            @PathVariable Long id,
-            @Valid @RequestBody AtualizarAssistenteRequest request) {
+    public ResponseEntity<AssistenteResponse> atualizarAssistente(@PathVariable Long id, @Valid @RequestBody AtualizarAssistenteRequest request) {
         log.info("Atualizando assistente: {}", id);
         AssistenteResponse response = service.atualizar(id, request);
         return ResponseEntity.ok(response);
