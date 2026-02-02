@@ -10,15 +10,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
-/**
- * Entity para armazenar configurações do sistema
- * 
- * Exemplos:
- * - OPENROUTER_API_KEY: Chave de API para OpenRouter
- * - EMBEDDING_MODEL: Modelo para gerar embeddings
- * - TEMPERATURE: Controla criatividade do LLM (0-1)
- * - MAX_TOKENS: Máximo de tokens por requisição
- */
 @Entity
 @Table(name = "configuracao")
 @Getter
@@ -31,42 +22,21 @@ public class Configuracao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /**
-     * Tipo único de configuração
-     * Exemplos: OPENROUTER_API_KEY, EMBEDDING_MODEL, TEMPERATURE
-     */
     @Column(name = "tipo_configuracao", nullable = false, unique = true)
     private String tipoConfiguracao;
 
-    /**
-     * Chave/nome da configuração
-     */
     @Column(nullable = false)
     private String chave;
 
-    /**
-     * Valor da configuração
-     * NOTA: Em produção, isso deveria estar criptografado
-     */
     @Column(columnDefinition = "TEXT", nullable = false)
     private String valor;
 
-    /**
-     * Descrição para referência do admin
-     */
     @Column(columnDefinition = "TEXT")
     private String descricao;
 
-    /**
-     * Se é dado sensível (chave de API)
-     * Se true, não retorna o valor em GET, apenas indica que está configurado
-     */
     @Column(name = "eh_sensivel")
     private Boolean ehSensivel = true;
 
-    /**
-     * Status: ATIVO ou INATIVO
-     */
     @Column(nullable = false)
     private String status = "ATIVO";
 
@@ -78,9 +48,6 @@ public class Configuracao {
     @Column(name = "atualizado_em", nullable = false)
     private LocalDateTime atualizadoEm;
 
-    /**
-     * Enum para tipos de configuração disponíveis
-     */
     public enum TipoConfiguracao {
         // API Keys
         OPENROUTER_API_KEY("openrouter.api.key", "Chave de API OpenRouter", true),
