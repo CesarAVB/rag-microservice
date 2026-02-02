@@ -217,6 +217,18 @@ public class ConfiguracaoService {
     }
 
     // ==================================
+    // # Método - listarModelosCadastrados - Retornar modelos cadastrados (embedding e llm padrão)
+    // ==================================
+    public List<ConfiguracaoResponse> listarModelosCadastrados() {
+        log.debug("Listando modelos cadastrados");
+        return repository.findAll().stream()
+            .filter(c -> TipoConfiguracao.EMBEDDING_MODEL.name().equals(c.getTipoConfiguracao())
+                || TipoConfiguracao.LLM_MODEL_PADRAO.name().equals(c.getTipoConfiguracao()))
+            .map(ConfiguracaoResponse::from)
+            .toList();
+    }
+
+    // ==================================
     // # DTOs Internos
     // ==================================
 

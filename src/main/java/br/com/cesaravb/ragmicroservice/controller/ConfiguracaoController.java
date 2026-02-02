@@ -107,6 +107,15 @@ public class ConfiguracaoController {
     }
 
     // ==================================
+    // # Método - listarModelos - Retornar modelos cadastrados (embedding e llm padrão)
+    // ==================================
+    @GetMapping("/modelos")
+    public ResponseEntity<List<ConfiguracaoResponse>> listarModelos() {
+        List<ConfiguracaoResponse> modelos = service.listarModelosCadastrados();
+        return ResponseEntity.ok(modelos);
+    }
+
+    // ==================================
     // # Método - ChecklistResponse - Response para checklist de status
     // ==================================
     public record ChecklistResponse(
