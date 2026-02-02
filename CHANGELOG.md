@@ -1,3 +1,14 @@
+## [1.2.0](https://github.com/CesarAVB/rag-microservice/compare/v1.1.0...v1.2.0) (2026-02-02)
+
+### Features
+
+* Adiciona configuração global de CORS para a aplicação Spring Boot ([397db4b](https://github.com/CesarAVB/rag-microservice/commit/397db4b8c69500a4f8de4cee310a3acf94188b7f))
+* Adiciona ConfiguracaoController e ajustes de formatação em ([50e982c](https://github.com/CesarAVB/rag-microservice/commit/50e982ce2eca838e74811ea7b9d434e34a41c8e5))
+* Adiciona DTOs para criação, atualização e resposta de Configuração ([b25bfa4](https://github.com/CesarAVB/rag-microservice/commit/b25bfa445955cb0cee84b4a74afe80658a452824))
+* Adiciona entidades e enums para configuração, modelos, status e ([f949b48](https://github.com/CesarAVB/rag-microservice/commit/f949b48f92a44458ed27c869be80b8cf4b2ee390))
+* Adiciona o repositório ConfiguracaoRepository para acesso a dados ([9d0dbb2](https://github.com/CesarAVB/rag-microservice/commit/9d0dbb224e31f8b588654f57be1e68c6a58f02f7))
+* Adiciona serviço para gerenciamento de configurações do sistema ([8941fc0](https://github.com/CesarAVB/rag-microservice/commit/8941fc034032eda59706f32b1ed3a400853ab2a4))
+
 ## [1.1.0](https://github.com/CesarAVB/rag-microservice/compare/v1.0.0...v1.1.0) (2026-02-01)
 
 ### Features
