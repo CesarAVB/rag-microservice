@@ -2,6 +2,7 @@ package br.com.cesaravb.ragmicroservice.service;
 
 import br.com.cesaravb.ragmicroservice.dto.request.CriarConfiguracaoRequest;
 import br.com.cesaravb.ragmicroservice.dto.request.AtualizarConfiguracaoRequest;
+import br.com.cesaravb.ragmicroservice.dto.response.ChecklistConfiguracao;
 import br.com.cesaravb.ragmicroservice.dto.response.ConfiguracaoResponse;
 import br.com.cesaravb.ragmicroservice.entity.Configuracao;
 import br.com.cesaravb.ragmicroservice.entity.enums.StatusConfiguracao;
@@ -227,16 +228,4 @@ public class ConfiguracaoService {
             .map(ConfiguracaoResponse::from)
             .toList();
     }
-
-    // ==================================
-    // # DTOs Internos
-    // ==================================
-
-    public record ChecklistConfiguracao(
-        boolean openrouterApiKeyConfigurada,
-        boolean embeddingModelConfigurado,
-        boolean embeddingDimensionConfigurado,
-        boolean maxTokensConfigurado,
-        boolean sistemaPronto
-    ) {}
 }

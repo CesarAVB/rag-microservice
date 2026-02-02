@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.cesaravb.ragmicroservice.dto.request.AtualizarConfiguracaoRequest;
 import br.com.cesaravb.ragmicroservice.dto.request.CriarConfiguracaoRequest;
+import br.com.cesaravb.ragmicroservice.dto.response.ChecklistResponse;
 import br.com.cesaravb.ragmicroservice.dto.response.ConfiguracaoResponse;
 import br.com.cesaravb.ragmicroservice.service.ConfiguracaoService;
 import lombok.RequiredArgsConstructor;
@@ -107,22 +108,11 @@ public class ConfiguracaoController {
     }
 
     // ==================================
-    // # Método - listarModelos - Retornar modelos cadastrados (embedding e llm padrão)
+    // # Método - listarModelos - Listar modelos LLM e Embedding cadastrados
     // ==================================
     @GetMapping("/modelos")
     public ResponseEntity<List<ConfiguracaoResponse>> listarModelos() {
         List<ConfiguracaoResponse> modelos = service.listarModelosCadastrados();
         return ResponseEntity.ok(modelos);
     }
-
-    // ==================================
-    // # Método - ChecklistResponse - Response para checklist de status
-    // ==================================
-    public record ChecklistResponse(
-        boolean openrouterApiKeyConfigurada,
-        boolean embeddingModelConfigurado,
-        boolean temperatureConfigurada,
-        boolean maxTokensConfigurado,
-        boolean sistemaPronto  // true se todas essenciais estão configuradas
-    ) {}
 }
