@@ -28,55 +28,45 @@ public class ConfiguracaoController {
 
     private final ConfiguracaoService service;
 
-    /**
-     * GET /api/configuracoes
-     * Listar todas as configurações
-     */
+    // ==================================
+    // # Método - listar - Listar todas as configurações
+    // ==================================
     @GetMapping
     public ResponseEntity<List<ConfiguracaoResponse>> listar() {
         List<ConfiguracaoResponse> configuracoes = service.listarTodas();
         return ResponseEntity.ok(configuracoes);
     }
 
-    /**
-     * GET /api/configuracoes/{id}
-     * Obter configuração por ID
-     */
+    // ==================================
+    // # Método - obterPorId - Obter configuração por ID
+    // ==================================
     @GetMapping("/{id}")
     public ResponseEntity<ConfiguracaoResponse> obterPorId(@PathVariable Long id) {
         ConfiguracaoResponse configuracao = service.obterPorId(id);
         return ResponseEntity.ok(configuracao);
     }
 
-    /**
-     * GET /api/configuracoes/tipo/{tipo}
-     * Obter configuração por tipo
-     * 
-     * Exemplos:
-     * - GET /api/configuracoes/tipo/OPENROUTER_API_KEY
-     * - GET /api/configuracoes/tipo/EMBEDDING_MODEL
-     * - GET /api/configuracoes/tipo/TEMPERATURE
-     */
+    // ==================================
+    // # Método - obterPorTipo - Obter configuração por tipo
+    // ==================================
     @GetMapping("/tipo/{tipo}")
     public ResponseEntity<ConfiguracaoResponse> obterPorTipo(@PathVariable String tipo) {
         ConfiguracaoResponse configuracao = service.obterPorTipo(tipo);
         return ResponseEntity.ok(configuracao);
     }
 
-    /**
-     * POST /api/configuracoes
-     * Criar nova configuração
-     */
+    // ==================================
+    // # Método - criar - Criar nova configuração
+    // ==================================
     @PostMapping
     public ResponseEntity<ConfiguracaoResponse> criar(@RequestBody CriarConfiguracaoRequest request) {
         ConfiguracaoResponse configuracao = service.criar(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(configuracao);
     }
 
-    /**
-     * PUT /api/configuracoes/{id}
-     * Atualizar configuração
-     */
+    // ==================================
+    // # Método - atualizar - Atualizar configuração
+    // ==================================
     @PutMapping("/{id}")
     public ResponseEntity<ConfiguracaoResponse> atualizar(
         @PathVariable Long id,
@@ -86,21 +76,18 @@ public class ConfiguracaoController {
         return ResponseEntity.ok(configuracao);
     }
 
-    /**
-     * DELETE /api/configuracoes/{id}
-     * Deletar configuração
-     */
+    // ==================================
+    // # Método - deletar - Deletar configuração
+    // ==================================
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         service.deletar(id);
         return ResponseEntity.noContent().build();
     }
 
-    /**
-     * GET /api/configuracoes/status/checklist
-     * Verificar quais configurações estão ativas
-     * Útil para verificar se sistema está pronto
-     */
+    // ==================================
+    // # Método - verificarStatus - Verificar quais configurações estão ativas
+    // ==================================
     @GetMapping("/status/checklist")
     public ResponseEntity<ChecklistResponse> verificarStatus() {
         boolean openrouterApiKey = service.estaConfigurada("OPENROUTER_API_KEY");
@@ -119,9 +106,9 @@ public class ConfiguracaoController {
         return ResponseEntity.ok(checklist);
     }
 
-    /**
-     * Response para checklist de status
-     */
+    // ==================================
+    // # Método - ChecklistResponse - Response para checklist de status
+    // ==================================
     public record ChecklistResponse(
         boolean openrouterApiKeyConfigurada,
         boolean embeddingModelConfigurado,
