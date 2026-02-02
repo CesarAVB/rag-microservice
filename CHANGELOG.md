@@ -1,3 +1,19 @@
+## [1.3.0](https://github.com/CesarAVB/rag-microservice/compare/v1.2.0...v1.3.0) (2026-02-02)
+
+### Features
+
+* adiciona arquivo de configuração local para desenvolvimento ([9b7323a](https://github.com/CesarAVB/rag-microservice/commit/9b7323a8fa9cdd6a859cbfa59dbc7b6f5acb559a))
+* Adiciona arquivos de configuração para perfis local e produção do ([a88372a](https://github.com/CesarAVB/rag-microservice/commit/a88372a47e823c7e648b5b9fd18ce35489747edb))
+* Adiciona configuração global de CORS para a aplicação Spring Boot ([d777bfb](https://github.com/CesarAVB/rag-microservice/commit/d777bfb813c6ad87b608ef9ac35e24a333940821))
+* Adiciona ConfiguracaoController e ajustes de formatação em ([6a40204](https://github.com/CesarAVB/rag-microservice/commit/6a40204e09e387f683fd70661f83c03f58cc05ff))
+* adiciona DTOs para checklist de configurações e resposta ([b9de938](https://github.com/CesarAVB/rag-microservice/commit/b9de938eb61f829b6edc829fd11731ddc7cbc2c8))
+* Adiciona DTOs para criação, atualização e resposta de Configuração ([4bb2b76](https://github.com/CesarAVB/rag-microservice/commit/4bb2b767eac4b33cf2e6c9043345969a58f7b9d6))
+* adiciona endpoint para listar modelos cadastrados ([14fcef4](https://github.com/CesarAVB/rag-microservice/commit/14fcef410a664c1af872e797bc45733b116e83e8))
+* Adiciona entidades e enums para configuração, modelos, status e ([a349eca](https://github.com/CesarAVB/rag-microservice/commit/a349eca60e81eb6c9d62beaf47c7075f4e7c9b6c))
+* Adiciona o repositório ConfiguracaoRepository para acesso a dados ([88f470d](https://github.com/CesarAVB/rag-microservice/commit/88f470d3f115e4f904c32db7f5920c59f86b8c0c))
+* Adiciona serviço para gerenciamento de configurações do sistema ([d558de6](https://github.com/CesarAVB/rag-microservice/commit/d558de6d1121c8daa130f23a8e01fa176649a802))
+* Atualiza pom.xml para Spring Boot 4, spring-ai-bom e melhorias no ([9dd2081](https://github.com/CesarAVB/rag-microservice/commit/9dd2081bd4fef111344152a3684ca8cfeace5b2a))
+
 ## [1.2.0](https://github.com/CesarAVB/rag-microservice/compare/v1.1.0...v1.2.0) (2026-02-02)
 
 ### Features
