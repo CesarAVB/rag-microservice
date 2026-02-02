@@ -1,8 +1,5 @@
 package br.com.cesaravb.ragmicroservice.dto.response;
 
-/**
- * Response para checklist de status das configurações
- */
 public record ChecklistResponse(
     boolean openrouterApiKeyConfigurada,
     boolean embeddingModelConfigurado,

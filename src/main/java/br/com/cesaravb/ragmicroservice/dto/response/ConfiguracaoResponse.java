@@ -8,11 +8,11 @@ public record ConfiguracaoResponse(
     Long id,
     String tipoConfiguracao,
     String chave,
-    String valor,             // null se ehSensivel = true
+    String valor,
     String descricao,
     Boolean ehSensivel,
     String status,
-    Boolean estaConfigurado,  // true se valor não vazio
+    Boolean estaConfigurado,
     LocalDateTime criadoEm,
     LocalDateTime atualizadoEm
 ) {
